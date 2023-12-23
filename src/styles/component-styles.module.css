@@ -1,0 +1,84 @@
+.cardItem {
+  padding: 2.4rem;
+  width: 100%;
+
+  background-color: var(--color-brand-200);
+}
+
+.page {
+  margin: 5rem auto;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  flex: auto;
+}
+
+.cardSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.4rem;
+
+  width: 25vw;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.2rem;
+}
+
+.formInput {
+  height: 4.8rem;
+
+  padding: 0 2.4rem;
+  background-color: var(--color-brand-100);
+  border-radius: var(--border-radius-md);
+
+  border: none;
+}
+
+.formTextArea {
+  height: 20rem;
+
+  padding: 1.2rem 2.4rem;
+  background-color: var(--color-brand-100);
+  border-radius: var(--border-radius-md);
+
+  border: none;
+
+  overflow-y: auto;
+}
+
+.inputError {
+  border: 3px solid var(--color-red-600);
+}
+
+.loadingButton {
+  position: relative;
+  height: 6.2rem;
+}
+
+.heading {
+  border-top: 3px solid var(--color-brand-300);
+  border-bottom: 3px solid var(--color-brand-300);
+}
+
+.mainHeading {
+  text-align: center;
+  padding: 2.4rem;
+}
+
+.subHeading {
+  padding: 1.8rem;
+}

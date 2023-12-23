@@ -1,0 +1,29 @@
+.shoppingCartItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+
+  align-items: center;
+}
+
+.quantityButtons {
+  display: flex;
+  gap: 0.8rem;
+
+  align-items: center;
+}
+
+.quantityButton {
+  border: none;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: none;
+}
+
+.quantityButton:focus {
+  outline: none;
+}

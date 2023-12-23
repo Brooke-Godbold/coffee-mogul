@@ -1,0 +1,21 @@
+.ratingBar {
+  display: flex;
+}
+
+.ratingButton {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.ratingButton:focus {
+  outline: none;
+}
+
+.nonEditable {
+  pointer-events: none;
+}
+
+.ratingButton > svg {
+  transform: scale(150%);
+}

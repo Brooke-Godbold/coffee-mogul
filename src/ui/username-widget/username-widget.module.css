@@ -1,0 +1,23 @@
+.usernameWidget {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.userImage {
+  width: 5rem;
+  height: 5rem;
+}
+
+.userImage > img {
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+}
+
+.userName {
+  font-weight: 600;
+  font-style: italic;
+}

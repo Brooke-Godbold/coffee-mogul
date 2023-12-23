@@ -1,0 +1,23 @@
+.cartSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.itemSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  row-gap: 1.2rem;
+}
+
+.quantity {
+  display: flex;
+  justify-self: flex-end;
+}
+
+.itemLink {
+  font-style: italic;
+  font-weight: bold;
+}

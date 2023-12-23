@@ -1,0 +1,15 @@
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.paymentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.submitButton {
+  width: 100%;
+}

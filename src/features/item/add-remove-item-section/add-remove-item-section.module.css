@@ -1,0 +1,15 @@
+.quantitySelect {
+  background-color: var(--color-brand-200);
+  border: 2px solid var(--color-brand-400);
+
+  border-radius: var(--border-radius-sm);
+
+  padding: 0.8rem 1.2rem;
+
+  font-weight: 500;
+}
+
+.addRemoveSection {
+  display: flex;
+  gap: 2.4rem;
+}

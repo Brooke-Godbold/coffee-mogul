@@ -1,0 +1,64 @@
+.cartButton {
+  border: none;
+  background-color: transparent;
+
+  box-shadow: none;
+}
+
+.cartButton:focus {
+  outline: none;
+}
+
+.cartButton > svg {
+  transform: scale(200%);
+}
+
+.dropdown {
+  position: absolute;
+
+  right: 0;
+  top: 100%;
+
+  width: 35rem;
+  max-height: 35rem;
+
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  border-radius: var(--border-radius-md);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+
+  box-shadow: var(--shadow-md);
+
+  overflow-y: auto;
+
+  background-color: var(--color-brand-200);
+}
+
+.cartLink {
+  cursor: pointer;
+
+  padding: 0.8rem 1.2rem;
+
+  background-color: var(--color-brand-100);
+
+  border: 2px solid var(--color-brand-300);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+
+  transition: all 0.3s;
+
+  text-align: center;
+}
+
+.cartLink:hover {
+  background-color: var(--color-brand-200);
+}
+
+.cartLink:active {
+  transform: scale(105%);
+}

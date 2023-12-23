@@ -1,0 +1,19 @@
+.searchResults {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.noResultsFound {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+.skeleton {
+  width: 100%;
+  height: 30rem;
+
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+
+  background-color: var(--color-brand-100);
+
+  position: relative;
+}

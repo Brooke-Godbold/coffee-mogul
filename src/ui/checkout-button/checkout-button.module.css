@@ -1,0 +1,23 @@
+.checkoutLink {
+  cursor: pointer;
+
+  padding: 0.8rem 1.2rem;
+
+  background-color: var(--color-brand-100);
+
+  border: 2px solid var(--color-brand-300);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+
+  transition: all 0.3s;
+
+  text-align: center;
+}
+
+.checkoutLink:hover {
+  background-color: var(--color-brand-200);
+}
+
+.checkoutLink:active {
+  transform: scale(105%);
+}
