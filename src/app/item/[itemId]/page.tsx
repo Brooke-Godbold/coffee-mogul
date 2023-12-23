@@ -10,6 +10,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import SignInButton from "@/ui/sign-in-button/sign-in-button";
 import ReviewSection from "@/features/review/review-section/review-section";
+import ErrorToast from "@/ui/error-toast/error-toast";
+import { revalidatePath } from "next/cache";
 
 interface ItemResult {
   item?: Document | null;
@@ -72,7 +74,7 @@ async function updateRecentlyViewed(userId: string, itemId: string) {
   const client = await authClient;
 
   try {
-    const user = await client
+    await client
       ?.db()
       .collection("users")
       .findOneAndUpdate({ email: userId }, [
@@ -114,6 +116,8 @@ async function updateRecentlyViewed(userId: string, itemId: string) {
         },
       ]);
 
+    revalidatePath("/");
+
     return {};
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -135,6 +139,10 @@ export default async function ItemDetailPage({
 }: ItemDetailPageProps) {
   const itemDetail = await getItemData(itemId);
 
+  if (!itemDetail.item) {
+    notFound();
+  }
+
   const session = await getServerSession(authOptions);
 
   let cartQuantity;
@@ -143,12 +151,14 @@ export default async function ItemDetailPage({
     await updateRecentlyViewed(session.user.email, itemId);
   }
 
-  if (!itemDetail.item) {
-    notFound();
-  }
+  const errors = [
+    ...(itemDetail.error ? [itemDetail.error] : []),
+    ...(cartQuantity?.error ? [cartQuantity.error] : []),
+  ];
 
   return (
     <form className={styles.page}>
+      <ErrorToast errors={errors} />
       <h1 className={`${styles.mainHeading} ${styles.heading}`}>
         {itemDetail.item.name}
       </h1>

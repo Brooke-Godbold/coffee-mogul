@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import { authClient } from "@/utils/db";
 import { Document } from "mongodb";
+import ErrorToast from "@/ui/error-toast/error-toast";
 
 async function getAddresses(userId: string) {
   const client = await authClient;
@@ -40,6 +41,7 @@ export default async function AddressSection() {
 
   return (
     <div className={styles.cardSection}>
+      <ErrorToast errors={addressData.error ? [addressData.error] : []} />
       {addressData.addresses?.map((address: Document, i: number) => (
         <AddressItem key={`address_${i}`} address={address} />
       ))}

@@ -6,6 +6,7 @@ import { getCart } from "@/utils/db/get-shopping-cart";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authClient } from "@/utils/db";
+import ErrorToast from "@/ui/error-toast/error-toast";
 
 async function getAddresses(userId: string) {
   const client = await authClient;
@@ -36,8 +37,14 @@ export default async function CheckoutPage() {
 
   const addresses = await getAddresses(session?.user?.email || "");
 
+  const errors = [
+    ...(cartItems.error ? [cartItems.error] : []),
+    ...(addresses.error ? [addresses.error] : []),
+  ];
+
   return (
     <div className={styles.page} style={{ width: "25%" }}>
+      <ErrorToast errors={errors} />
       <h1 className={`${styles.mainHeading} ${styles.heading}`}>Checkout</h1>
       <CheckoutSection
         cartItems={cartItems.cart}

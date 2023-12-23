@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 import styles from "@/styles/component-styles.module.css";
+import ErrorToast from "@/ui/error-toast/error-toast";
 
 async function getHistoricalTransactions(userId: string) {
   const client = await userClient;
@@ -40,6 +41,7 @@ export default async function OrdersSection() {
 
   return (
     <div className={styles.cardSection}>
+      <ErrorToast errors={orders.error ? [orders.error] : []} />
       {orders.transactions?.map((order, i) => (
         <OrderItem key={`order_${i}`} order={order} />
       ))}

@@ -1,3 +1,4 @@
+import ErrorToast from "@/ui/error-toast/error-toast";
 import ProductSection from "@/ui/product-section/product-section";
 import { itemClient } from "@/utils/db";
 
@@ -25,5 +26,10 @@ async function getFeaturedItems() {
 export default async function Featured() {
   const featured = await getFeaturedItems();
 
-  return <ProductSection items={featured.items || []} />;
+  return (
+    <>
+      <ErrorToast errors={featured.error ? [featured.error] : []} />
+      <ProductSection items={featured.items || []} />
+    </>
+  );
 }

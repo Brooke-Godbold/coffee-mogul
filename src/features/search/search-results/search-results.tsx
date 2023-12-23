@@ -44,7 +44,7 @@ export default async function SearchResults({
 
   return (
     <div className={styles.searchResults}>
-      <ErrorToast error={search.error} />
+      <ErrorToast errors={search.error ? [search.error] : []} />
       {(search.searchResults?.length ?? 0) > 0 ? (
         search.searchResults?.map((result) => (
           <SearchItem key={result.itemId} item={result} />

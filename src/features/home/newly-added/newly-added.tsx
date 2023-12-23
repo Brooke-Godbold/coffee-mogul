@@ -1,3 +1,4 @@
+import ErrorToast from "@/ui/error-toast/error-toast";
 import ProductSection from "@/ui/product-section/product-section";
 import { itemClient } from "@/utils/db";
 
@@ -25,5 +26,10 @@ async function getNewlyAddedItems() {
 export default async function NewlyAdded() {
   const newlyAdded = await getNewlyAddedItems();
 
-  return <ProductSection items={newlyAdded.items || []} />;
+  return (
+    <>
+      <ErrorToast errors={newlyAdded.error ? [newlyAdded.error] : []} />
+      <ProductSection items={newlyAdded.items || []} />
+    </>
+  );
 }

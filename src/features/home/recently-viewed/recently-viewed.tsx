@@ -1,4 +1,5 @@
 import { authOptions } from "@/auth";
+import ErrorToast from "@/ui/error-toast/error-toast";
 import ProductSection from "@/ui/product-section/product-section";
 import { authClient, itemClient } from "@/utils/db";
 import { getServerSession } from "next-auth";
@@ -56,6 +57,9 @@ export default async function RecentlyViewed() {
 
   return (
     <>
+      <ErrorToast
+        errors={recentlyViewedItems?.error ? [recentlyViewedItems.error] : []}
+      />
       {recentlyViewedItems?.items ? (
         <ProductSection items={recentlyViewedItems.items} />
       ) : null}

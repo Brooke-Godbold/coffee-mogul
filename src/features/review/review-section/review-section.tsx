@@ -4,6 +4,7 @@ import ReviewButton from "../review-button/review-button";
 import ReviewItem from "../review-item/review-item";
 import { itemClient } from "@/utils/db";
 import UsernameWidget from "@/ui/username-widget/username-widget";
+import ErrorToast from "@/ui/error-toast/error-toast";
 
 async function getReviews(itemId: string) {
   const client = await itemClient;
@@ -34,6 +35,7 @@ export default async function ReviewSection({ itemId }: ReviewSectionProps) {
 
   return (
     <div className={styles.reviewSection}>
+      <ErrorToast errors={reviews.error ? [reviews.error] : []} />
       <ReviewButton itemId={itemId} />
       <h2
         className={`${componentStyles.subHeading} ${componentStyles.heading}`}

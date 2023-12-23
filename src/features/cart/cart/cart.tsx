@@ -1,5 +1,6 @@
 import CartSection from "@/features/cart/cart-section";
 import CheckoutButton from "@/ui/checkout-button/checkout-button";
+import ErrorToast from "@/ui/error-toast/error-toast";
 import Spinner from "@/ui/spinner/spinner";
 import { getCart } from "@/utils/db/get-shopping-cart";
 
@@ -16,6 +17,7 @@ export default async function Cart() {
 
   return (
     <>
+      <ErrorToast errors={cartItems.error ? [cartItems.error] : []} />
       {(cartItems?.cart?.length ?? 0) > 0 ? (
         <>
           <CartSection

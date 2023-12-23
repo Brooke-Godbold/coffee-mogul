@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import toast from "react-hot-toast";
 
 interface ErrorToastProps {
-  error: string | undefined;
+  errors: string[];
 }
 
-export default function ErrorToast({ error }: ErrorToastProps) {
+export default function ErrorToast({ errors }: ErrorToastProps) {
   useEffect(() => {
-    if (error) toast.error(error);
-  }, [error]);
+    errors.map((error) => toast.error(error));
+  }, [errors]);
 
   return <div style={{ position: "absolute" }} />;
 }

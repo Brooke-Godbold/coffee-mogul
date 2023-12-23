@@ -2,6 +2,7 @@ import { authOptions } from "@/auth";
 import { itemClient, userClient } from "@/utils/db";
 import { getServerSession } from "next-auth";
 import ReviewModal from "../review-modal/review-modal";
+import ErrorToast from "@/ui/error-toast/error-toast";
 
 async function getUserHasBoughtItem(userId: string, itemId: string) {
   const client = await userClient;
@@ -61,8 +62,14 @@ export default async function ReviewButton({ itemId }: ReviewButtonProps) {
   );
   const reviewStatus = await getUserReview(session.user.email, itemId);
 
+  const errors = [
+    ...(transactionStatus.error ? [transactionStatus.error] : []),
+    ...(reviewStatus.error ? [reviewStatus.error] : []),
+  ];
+
   return (
     <div>
+      <ErrorToast errors={errors} />
       {transactionStatus.transactionFound && (
         <ReviewModal
           itemId={itemId}

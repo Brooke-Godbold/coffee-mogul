@@ -66,7 +66,7 @@ export default function PaymentForm({ savedAddresses }: PaymentFormProps) {
 
   return (
     <>
-      <ErrorToast error={paymentState.error} />
+      <ErrorToast errors={paymentState.error ? [paymentState.error] : []} />
       {!searchParams.get("payment_intent_client_secret") ? (
         <form className={styles.paymentForm} onSubmit={handleSubmit}>
           <div className={styles.paymentSection}>

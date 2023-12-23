@@ -3,6 +3,7 @@
 import { authClient } from "@/utils/db";
 import styles from "./username-widget.module.css";
 import Image from "next/image";
+import ErrorToast from "../error-toast/error-toast";
 
 async function getUserDetails(userId: string) {
   const client = await authClient;
@@ -32,6 +33,7 @@ export default async function UsernameWidget({ userId }: UsernameWidgetProps) {
 
   return (
     <div className={styles.usernameWidget}>
+      <ErrorToast errors={userDetails.error ? [userDetails.error] : []} />
       <div className={styles.userImage}>
         <Image
           src={userDetails.user?.image}
