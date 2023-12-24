@@ -5,6 +5,10 @@
   box-shadow: none;
 }
 
+.cartButton:hover {
+  background: none;
+}
+
 .cartButton:focus {
   outline: none;
 }
@@ -36,7 +40,14 @@
 
   overflow-y: auto;
 
-  background-color: var(--color-brand-200);
+  background-color: var(--color-brand-400);
+
+  transform-origin: top;
+  transition: all 0.3s;
+}
+
+.inactive {
+  transform: scaleY(0%);
 }
 
 .cartLink {
@@ -44,9 +55,9 @@
 
   padding: 0.8rem 1.2rem;
 
-  background-color: var(--color-brand-100);
+  background-color: var(--color-brand-500);
 
-  border: 2px solid var(--color-brand-300);
+  border: 2px solid var(--color-gold-300);
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-md);
 
@@ -56,7 +67,7 @@
 }
 
 .cartLink:hover {
-  background-color: var(--color-brand-200);
+  background-color: var(--color-brand-400);
 }
 
 .cartLink:active {

@@ -3,7 +3,12 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 2fr 2fr 2fr;
 
-  background-color: var(--color-red-100);
+  background-color: var(--color-brand-700);
+
+  border: 7px double var(--color-brand-500);
+
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
 }
 
 .itemDetailsImage {

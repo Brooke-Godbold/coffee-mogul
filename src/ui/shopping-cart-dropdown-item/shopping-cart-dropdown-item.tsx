@@ -47,7 +47,10 @@ export default function ShoppingCartDropdownItem({
 
   return (
     <div className={styles.shoppingCartItem} key={item.data?.itemId}>
-      <Link href={paths.itemDetailPath(item.data?.itemId)}>
+      <Link
+        className={styles.cartItemLink}
+        href={paths.itemDetailPath(item.data?.itemId)}
+      >
         {item.data?.name}
       </Link>
       <div>{`x${item.quantity}`}</div>

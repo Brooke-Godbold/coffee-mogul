@@ -64,6 +64,11 @@ export default function PaymentForm({ savedAddresses }: PaymentFormProps) {
   // @ts-ignore
   const addresses = savedAddresses.map(({ addressId, ...address }) => address);
 
+  const appearance = {
+    theme: "flat",
+    variables: { colorPrimaryText: "#262626" },
+  };
+
   return (
     <>
       <ErrorToast errors={paymentState.error ? [paymentState.error] : []} />

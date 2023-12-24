@@ -3,23 +3,32 @@
 
   padding: 2.4rem;
 
-  background-color: var(--color-brand-200);
-
-  border-radius: var(--border-radius-sm);
+  background-color: none;
 
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+
+  border-bottom: 2px solid var(--color-brand-600);
 }
 
 .reviewContent {
   margin-top: 3.2rem;
+
+  transition: all 0.3s;
+  transform-origin: top;
+}
+
+.closed {
+  transform: scaleY(0%);
 }
 
 .reviewOpenButton {
   background-color: inherit;
+
+  border-color: var(--color-brand-600);
 }
 
 .reviewOpenButton:hover {
-  background-color: var(--color-brand-100);
+  background-color: var(--color-brand-500);
 }

@@ -14,6 +14,7 @@ export default function useFormErrors(
 ) {
   useEffect(() => {
     if (formState.success) {
+      formState.success = false;
       toast(successMessage);
       onCloseModal?.();
     } else if (formState.errors) {

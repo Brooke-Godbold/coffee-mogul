@@ -28,22 +28,26 @@ export default function ShoppingCartButton({
       >
         <FaShoppingCart />
       </button>
-      {shoppingCartOpen && (
-        <form className={styles.dropdown}>
-          <h3>Shopping Cart</h3>
-          {(cartItems?.cart?.length ?? 0) > 0 ? (
-            cartItems?.cart?.map((item) => (
-              <ShoppingCartDropdownItem key={item.data?.itemId} item={item} />
-            ))
-          ) : (
-            <div>Your Cart is Empty!</div>
-          )}
-          <Link href={paths.cartPath()} className={styles.cartLink}>
-            Cart
-          </Link>
-          {(cartItems?.cart?.length ?? 0) > 0 && <CheckoutButton />}
-        </form>
-      )}
+      <form
+        className={
+          shoppingCartOpen
+            ? `${styles.dropdown}`
+            : `${styles.dropdown} ${styles.inactive}`
+        }
+      >
+        <h3>Shopping Cart</h3>
+        {(cartItems?.cart?.length ?? 0) > 0 ? (
+          cartItems?.cart?.map((item) => (
+            <ShoppingCartDropdownItem key={item.data?.itemId} item={item} />
+          ))
+        ) : (
+          <div>Your Cart is Empty!</div>
+        )}
+        <Link href={paths.cartPath()} className={styles.cartLink}>
+          Cart
+        </Link>
+        {(cartItems?.cart?.length ?? 0) > 0 && <CheckoutButton />}
+      </form>
     </>
   );
 }

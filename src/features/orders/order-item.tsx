@@ -1,5 +1,5 @@
 import { Document } from "mongodb";
-import styles from "./order-item.module.css";
+import styles from "@/styles/component-styles.module.css";
 
 interface OrderItemProps {
   order: Document;
@@ -14,7 +14,7 @@ export default function OrderItem({ order }: OrderItemProps) {
   const date = new Date(order.created * 1000);
 
   return (
-    <div className={styles.orderItem}>
+    <div className={styles.cardItem}>
       <div>{`Order Number: ${order.created}`}</div>
       {order.orderItems?.map((orderItem: OrderItem) => (
         <div

@@ -2,7 +2,7 @@
 
 import { SyntheticEvent, useState } from "react";
 import styles from "./review-item.module.css";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Document } from "mongodb";
 import RatingBar from "@/ui/rating-bar/rating-bar";
 
@@ -23,12 +23,20 @@ export default function ReviewItem({ review, children }: ReviewItemProps) {
   return (
     <div className={styles.reviewItem}>
       <button onClick={handleOpenReview} className={styles.reviewOpenButton}>
-        <FaChevronDown />
+        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
       </button>
       <h3>{review.title}</h3>
       <RatingBar rating={review.rating} />
       {children}
-      {isOpen && <div className={styles.reviewContent}>{review.content}</div>}
+      <div
+        className={
+          isOpen
+            ? `${styles.reviewContent}`
+            : `${styles.reviewContent} ${styles.closed}`
+        }
+      >
+        {review.content}
+      </div>
     </div>
   );
 }

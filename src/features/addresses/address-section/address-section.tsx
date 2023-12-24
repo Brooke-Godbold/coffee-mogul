@@ -5,6 +5,7 @@ import { authOptions } from "@/auth";
 import { authClient } from "@/utils/db";
 import { Document } from "mongodb";
 import ErrorToast from "@/ui/error-toast/error-toast";
+import { redirect } from "next/navigation";
 
 async function getAddresses(userId: string) {
   const client = await authClient;
@@ -34,7 +35,7 @@ export default async function AddressSection() {
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
-    return null;
+    redirect("/");
   }
 
   const addressData = await getAddresses(session?.user?.email);

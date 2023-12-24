@@ -8,6 +8,10 @@
   box-shadow: none;
 }
 
+.ratingButton:hover {
+  background: none;
+}
+
 .ratingButton:focus {
   outline: none;
 }

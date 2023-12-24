@@ -6,8 +6,8 @@
   transition: all 0.3s;
   padding: 3rem;
 
-  background-color: var(--color-brand-200);
-  color: var(--color-brand-700);
+  background-color: var(--color-brand-700);
+  color: var(--color-gold-300);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-lg);
 }
@@ -44,15 +44,11 @@
 .modalCloseButton > svg {
   width: 2.4rem;
   height: 2.4rem;
-  color: var(--color-brand-600);
+  color: var(--color-brand-400);
 
   transition: all 0.3s;
 }
 
 .modalCloseButton:hover {
-  background-color: var(--color-brand-600);
-}
-
-.modalCloseButton > svg:hover {
-  color: var(--color-brand-700);
+  background-color: var(--color-brand-300);
 }

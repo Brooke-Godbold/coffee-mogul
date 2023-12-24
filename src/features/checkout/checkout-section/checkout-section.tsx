@@ -67,13 +67,6 @@ export default function CheckoutSection({
     setTotalPrice(totalPrice);
   }, [cartItems]);
 
-  const options = {
-    clientSecret: clientSecret || "",
-    appearance: {
-      theme: "flat",
-    },
-  };
-
   if (!cartItems) {
     return <Spinner />;
   }
@@ -81,7 +74,21 @@ export default function CheckoutSection({
   return (
     <div>
       {clientSecret ? (
-        <Elements stripe={stripePromise} options={options} key={clientSecret}>
+        <Elements
+          stripe={stripePromise}
+          options={{
+            clientSecret: clientSecret || "",
+            appearance: {
+              theme: "flat",
+              variables: {
+                fontFamily: `${getComputedStyle(document.body).getPropertyValue(
+                  "--font-main"
+                )}, sans-serif`,
+              },
+            },
+          }}
+          key={clientSecret}
+        >
           <div className={styles.checkoutSection}>
             <CartSection cartItems={cartItems} totalPrice={totalPrice} />
             <PaymentForm savedAddresses={savedAddresses} />

@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bitter } from "next/font/google";
 import "@/styles/styles.css";
 import Header from "@/ui/header/header";
 import Providers from "./providers";
 import { Toaster } from "react-hot-toast";
 
-const interFont = Inter({
+const mainFont = Bitter({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-main",
 });
 
-export const interFontClass = interFont.variable;
+export const mainFontClass = mainFont.variable;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${interFont.variable} font-sans`}>
+    <html lang="en" className={`${mainFont.variable} font-sans`}>
       <body>
         <Providers>
           <Toaster />
