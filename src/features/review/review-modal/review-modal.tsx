@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import styles from "@/styles/component-styles.module.css";
+import { useState } from "react";
+import componentStyles from "@/styles/component-styles.module.css";
+import styles from "./review-modal.module.css";
 import Modal from "@/ui/modal/modal";
 import { useFormState } from "react-dom";
 import { addReview } from "@/actions/addReview";
 import { useSession } from "next-auth/react";
-import toast from "react-hot-toast";
 import RatingBar from "@/ui/rating-bar/rating-bar";
 import { Document } from "mongodb";
 import useFormErrors from "@/hooks/useFormErrors";
@@ -26,7 +26,9 @@ export default function ReviewModal({
   return (
     <Modal>
       <Modal.Open opens="new-review">
-        <button>{existingReview ? "Edit Review" : "Leave a Review!"}</button>
+        <button className={styles.reviewButton}>
+          {existingReview ? "Edit Review" : "Leave a Review!"}
+        </button>
       </Modal.Open>
       <Modal.Window name="new-review">
         <ReviewForm itemId={itemId} existingReview={existingReview} />
@@ -57,7 +59,7 @@ function ReviewForm({ onCloseModal, itemId, existingReview }: ReviewFormProps) {
       submitAction={addReviewAction}
       title={existingReview ? "Edit Review" : "Add a Review"}
     >
-      <div className={styles.formSection}>
+      <div className={componentStyles.formSection}>
         <label>Rating</label>
         <RatingBar rating={rating} setRating={setRating} />
       </div>

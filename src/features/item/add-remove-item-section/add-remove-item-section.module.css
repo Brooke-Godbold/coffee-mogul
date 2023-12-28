@@ -13,3 +13,19 @@
   display: flex;
   gap: 2.4rem;
 }
+
+.addRemoveButton {
+  position: relative;
+  width: 17rem;
+}
+
+@media (max-width: 25em) {
+  .addRemoveSection {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .addRemoveButton {
+    width: 100%;
+  }
+}

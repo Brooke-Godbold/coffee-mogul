@@ -1,7 +1,8 @@
 .itemDetailsSection {
   display: grid;
-  grid-template-columns: 1.5fr 2fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1.5fr 1fr 1fr;
+  column-gap: 2.4rem;
 
   background-color: var(--color-brand-700);
 
@@ -76,4 +77,59 @@
 
 .roastTag:active {
   transform: scale(120%);
+}
+
+@media (max-width: 100em) {
+  .itemDetailsSection {
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    grid-template-rows: 1.5fr 1fr;
+  }
+
+  .sectionBorder {
+    border: none;
+  }
+}
+
+@media (max-width: 75em) {
+  .itemDetailsSection {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 5fr 1fr 2.5fr 2.5fr;
+  }
+
+  .itemDetailsImage {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .price {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .about {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 40em) {
+  .itemDetailsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+@media (max-width: 25em) {
+  .itemDetailsSection {
+    padding: 0.8rem;
+  }
+
+  .itemInformationBlock {
+    padding: 0.8rem;
+  }
+
+  .about {
+    font-size: 1.4rem;
+  }
 }

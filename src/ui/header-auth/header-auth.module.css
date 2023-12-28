@@ -1,4 +1,4 @@
-.authSection {
+.authSection > ul {
   display: flex;
   gap: 1.2rem;
 
@@ -18,4 +18,11 @@
 
 .signInButton > svg {
   scale: 115%;
+}
+
+@media (max-width: 60em) {
+  .authSection > ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

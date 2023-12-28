@@ -33,3 +33,9 @@
 .reviewOpenButton:hover {
   background-color: var(--color-brand-500);
 }
+
+@media (max-width: 40em) {
+  .reviewContent {
+    font-size: 1.4rem;
+  }
+}

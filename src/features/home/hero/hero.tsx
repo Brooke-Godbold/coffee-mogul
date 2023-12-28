@@ -18,8 +18,7 @@ export default function Hero() {
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
           accusamus quasi, aut, optio assumenda necessitatibus harum blanditiis
-          dolorum a maiores similique nobis placeat repellendus. Molestias
-          tempora sit minus beatae voluptates.
+          dolorum a maiores similique nobis placeat repellendus.
         </span>
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
@@ -28,13 +27,11 @@ export default function Hero() {
           tempora sit minus beatae voluptates. Lorem ipsum dolor sit amet
           consectetur adipisicing elit. Incidunt accusamus quasi, aut, optio
           assumenda necessitatibus harum blanditiis dolorum a maiores similique
-          nobis placeat repellendus. Molestias tempora sit minus beatae
-          voluptates.
+          nobis placeat repellendus.
         </span>
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-          accusamus quasi, aut, optio assumenda necessitatibus harum blanditiis
-          dolorum a maiores similique nobis placeat repellendus.
+          accusamus quasi, aut, optio assumenda necessitatibus harum.
         </span>
       </div>
     </div>

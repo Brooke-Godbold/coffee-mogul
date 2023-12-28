@@ -43,7 +43,7 @@ export default async function CheckoutPage() {
   ];
 
   return (
-    <div className={styles.page} style={{ width: "25%" }}>
+    <div className={`${styles.page} ${styles.narrowPage}`}>
       <ErrorToast errors={errors} />
       <h1 className={`${styles.mainHeading} ${styles.heading}`}>Checkout</h1>
       <CheckoutSection

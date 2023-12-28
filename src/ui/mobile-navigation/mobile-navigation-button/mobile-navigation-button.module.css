@@ -1,0 +1,28 @@
+.mobileNavigation {
+  display: none;
+
+  box-shadow: var(--shadow-lg);
+}
+
+.mobileNavigation > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1 / 1;
+}
+
+.mobileNavigation > button > svg {
+  transform: scale(150%);
+}
+
+@media (max-width: 60em) {
+  .mobileNavigation {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 1.2rem;
+
+    padding: 2.4rem;
+  }
+}

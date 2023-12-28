@@ -79,7 +79,7 @@ function ItemButton({ action, children }: ItemButtonProps) {
 
   return (
     <button
-      style={{ position: "relative", width: "17rem" }}
+      className={styles.addRemoveButton}
       disabled={pending}
       formAction={action}
     >

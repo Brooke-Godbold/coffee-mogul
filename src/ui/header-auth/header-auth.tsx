@@ -7,7 +7,11 @@ import SignInButton from "../sign-in-button/sign-in-button";
 import Link from "next/link";
 import paths from "@/paths";
 
-export default function HeaderAuth() {
+interface HeaderAuthProps {
+  onClickFunc?: Function;
+}
+
+export default function HeaderAuth({ onClickFunc }: HeaderAuthProps) {
   const { status } = useSession();
 
   return (
@@ -15,13 +19,28 @@ export default function HeaderAuth() {
       {status === "loading" ? (
         <Spinner />
       ) : status === "authenticated" ? (
-        <>
-          <button type="button" onClick={() => signOut()}>
-            Sign Out
-          </button>
-          <Link href={paths.ordersPath()}>Orders</Link>
-          <Link href={paths.addressesPath()}>Addresses</Link>
-        </>
+        <ul>
+          <li>
+            <Link onClick={() => onClickFunc?.()} href={paths.cartPath()}>
+              Cart
+            </Link>
+          </li>
+          <li>
+            <Link onClick={() => onClickFunc?.()} href={paths.ordersPath()}>
+              Orders
+            </Link>
+          </li>
+          <li>
+            <Link onClick={() => onClickFunc?.()} href={paths.addressesPath()}>
+              Addresses
+            </Link>
+          </li>
+          <li>
+            <button type="button" onClick={() => signOut()}>
+              Sign Out
+            </button>
+          </li>
+        </ul>
       ) : (
         <SignInButton>Sign In</SignInButton>
       )}

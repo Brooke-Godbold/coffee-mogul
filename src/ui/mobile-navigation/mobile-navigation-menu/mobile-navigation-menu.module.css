@@ -1,0 +1,33 @@
+.overlay {
+  backdrop-filter: blur(4px);
+  pointer-events: all;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 998;
+}
+
+.navigationMenu {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.2rem;
+
+  z-index: 999;
+
+  top: 10rem;
+  left: 5rem;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  padding: 0;
+}

@@ -44,6 +44,8 @@
 
   transform-origin: top;
   transition: all 0.3s;
+
+  z-index: 997;
 }
 
 .inactive {

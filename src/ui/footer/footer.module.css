@@ -40,6 +40,8 @@
   font-size: 1.2rem;
 
   justify-content: center;
+
+  text-align: center;
 }
 
 .legal {
@@ -48,6 +50,8 @@
   font-size: 1.4rem;
 
   align-items: flex-end;
+
+  text-align: center;
 }
 
 .social {
@@ -71,4 +75,18 @@
 
 .social > a > svg {
   transform: scale(250%) translateY(-25%);
+}
+
+@media (max-width: 60em) {
+  .footerBottomGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    align-items: center;
+  }
+
+  .social {
+    margin-top: 2.4rem;
+  }
 }

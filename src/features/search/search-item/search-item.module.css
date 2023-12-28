@@ -39,3 +39,23 @@
 .searchItemPrice {
   text-align: center;
 }
+
+@media (max-width: 40em) {
+  .searchItem {
+    grid-template-rows: 3fr 1fr 1fr;
+  }
+
+  .searchItemTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 25em) {
+  .searchItemTitle {
+    font-size: 1.2rem;
+  }
+
+  .searchItemPrice {
+    font-size: 1.2rem;
+  }
+}

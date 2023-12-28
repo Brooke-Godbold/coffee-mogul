@@ -10,3 +10,23 @@
   font-style: italic;
   font-weight: 600;
 }
+
+@media (max-width: 50em) {
+  .averageRating {
+    flex-direction: column;
+  }
+
+  .averageRating > div {
+    padding-left: 80px;
+  }
+}
+
+@media (max-width: 25em) {
+  .averageRating {
+    flex-direction: row;
+  }
+
+  .averageRating > div {
+    padding-left: 0;
+  }
+}

@@ -26,7 +26,13 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
   return (
     <div className={styles.itemDetailsSection}>
       <div className={`${styles.itemDetailsImage} ${componentStyles.edgeFade}`}>
-        <Image src={item.image} alt={item.name} width={500} height={500} />
+        <Image
+          src={item.image}
+          alt={item.name}
+          width={500}
+          height={500}
+          layout="responsive"
+        />
       </div>
       <div
         className={`${styles.itemInformationBlock} ${styles.price} ${styles.sectionBorder}`}
@@ -34,7 +40,9 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
         <h3>Price</h3>
         <p>{`£${item.price / 100}`}</p>
       </div>
-      <div className={`${styles.itemInformationBlock} ${styles.sectionBorder}`}>
+      <div
+        className={`${styles.itemInformationBlock} ${styles.about} ${styles.sectionBorder}`}
+      >
         <h3>{`About ${item.name}`}</h3>
         <p>{item.description}</p>
         <div>

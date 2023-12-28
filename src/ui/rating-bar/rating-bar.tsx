@@ -30,33 +30,49 @@ export default function RatingBar({ rating, setRating }: RatingBarProps) {
   }
 
   return (
-    <div className={styles.ratingBar}>
-      {[...Array(10)].map((e, i) => (
-        <button
-          className={
-            setRating
-              ? `${styles.ratingButton}`
-              : `${styles.ratingButton} ${styles.nonEditable}`
-          }
-          style={{ transform: `translateX(${-9 * i}px)` }}
-          onClick={(e) => handleRating(e, i + 1)}
-          onMouseEnter={() => handleSetRatingBuffer(i + 1)}
-          onMouseLeave={handleResetRatingBuffer}
-          key={i + 1}
-        >
-          {ratingBuffer ? (
-            ratingBuffer > i ? (
+    <div>
+      <div className={styles.ratingBar}>
+        {[...Array(10)].map((e, i) => (
+          <button
+            className={
+              setRating
+                ? `${styles.ratingButton}`
+                : `${styles.ratingButton} ${styles.nonEditable}`
+            }
+            style={{ transform: `translateX(${-9 * i}px)` }}
+            onClick={(e) => handleRating(e, i + 1)}
+            onMouseEnter={() => handleSetRatingBuffer(i + 1)}
+            onMouseLeave={handleResetRatingBuffer}
+            key={i + 1}
+          >
+            {ratingBuffer ? (
+              ratingBuffer > i ? (
+                <PiCoffeeFill />
+              ) : (
+                <PiCoffeeLight />
+              )
+            ) : rating > i ? (
               <PiCoffeeFill />
             ) : (
               <PiCoffeeLight />
-            )
-          ) : rating > i ? (
-            <PiCoffeeFill />
-          ) : (
-            <PiCoffeeLight />
-          )}
-        </button>
-      ))}
+            )}
+          </button>
+        ))}
+      </div>
+      <div
+        className={`${styles.ratingNumber} ${!setRating ? "" : styles.hidden}`}
+      >{`${rating} / 10`}</div>
+      <select
+        className={`${styles.ratingSelect} ${setRating ? "" : styles.hidden}`}
+        value={rating}
+        onChange={(e) => setRating?.(parseInt(e.target.value))}
+      >
+        {[...Array(10)].map((e, i) => (
+          <option key={i} value={i + 1}>
+            {i + 1}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

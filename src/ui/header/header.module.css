@@ -48,3 +48,21 @@
   bottom: 0;
   margin: auto;
 }
+
+@media (max-width: 85em) {
+  .searchBar {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .searchBar {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 60em) {
+  .header {
+    display: none;
+  }
+}
