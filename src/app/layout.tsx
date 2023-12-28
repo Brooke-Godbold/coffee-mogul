@@ -4,6 +4,7 @@ import "@/styles/styles.css";
 import Header from "@/ui/header/header";
 import Providers from "./providers";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/ui/footer/footer";
 
 const mainFont = Bitter({
   display: "swap",
@@ -29,7 +30,12 @@ export default function RootLayout({
         <Providers>
           <Toaster />
           <Header />
-          <main>{children}</main>
+          <main>
+            <>
+              {children}
+              <Footer />
+            </>
+          </main>
         </Providers>
       </body>
     </html>

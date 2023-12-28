@@ -78,12 +78,28 @@ export default function CheckoutSection({
           stripe={stripePromise}
           options={{
             clientSecret: clientSecret || "",
+            fonts: [
+              {
+                cssSrc:
+                  "https://fonts.googleapis.com/css2?family=Bitter&display=swap",
+              },
+            ],
             appearance: {
               theme: "flat",
               variables: {
-                fontFamily: `${getComputedStyle(document.body).getPropertyValue(
-                  "--font-main"
-                )}, sans-serif`,
+                fontFamily: `Bitter, serif`,
+                colorBackground: `${getComputedStyle(
+                  document.body
+                ).getPropertyValue("--color-brand-400")}`,
+                colorText: `${getComputedStyle(document.body).getPropertyValue(
+                  "--color-gold-300"
+                )}`,
+                borderRadius: `${getComputedStyle(
+                  document.body
+                ).getPropertyValue("--border-radius-md")}`,
+                colorPrimary: `${getComputedStyle(
+                  document.body
+                ).getPropertyValue("--color-gold-500")}`,
               },
             },
           }}

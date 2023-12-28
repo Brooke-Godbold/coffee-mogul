@@ -12,4 +12,14 @@
 
 .submitButton {
   width: 100%;
+
+  display: flex;
+  gap: 1.8rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.submitButton > svg {
+  transform: scale(110%);
 }

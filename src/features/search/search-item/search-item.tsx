@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./search-item.module.css";
+import componentStyles from "@/styles/component-styles.module.css";
 import Link from "next/link";
 import { Document } from "mongodb";
 
@@ -14,7 +15,7 @@ export default function SearchItem({ item }: SearchItemProps) {
       href={`/item/${item.itemId}`}
       className={styles.searchItem}
     >
-      <div className={styles.searchItemImage}>
+      <div className={`${styles.searchItemImage} ${componentStyles.edgeFade}`}>
         <Image src={item.image} alt={item.name} width={200} height={200} />
       </div>
       <h4 className={styles.searchItemTitle}>{item.name}</h4>

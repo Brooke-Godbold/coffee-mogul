@@ -6,6 +6,7 @@ import Link from "next/link";
 import SearchBar from "@/features/search/search-bar/search-bar";
 import HeaderOptions from "./header-options/header-options";
 import { Suspense } from "react";
+import SearchBarSkeleton from "@/features/search/search-bar-skeleton/search-bar-skeleton";
 
 export default function Header() {
   return (
@@ -16,7 +17,9 @@ export default function Header() {
         </h2>
       </Link>
       <div className={styles.searchBar}>
-        <SearchBar />
+        <Suspense fallback={<SearchBarSkeleton />}>
+          <SearchBar />
+        </Suspense>
       </div>
       <Suspense fallback={<div />}>
         <HeaderOptions />

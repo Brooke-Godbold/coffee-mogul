@@ -1,0 +1,10 @@
+.addressItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.addressDetails {
+  display: flex;
+  flex-direction: column;
+}

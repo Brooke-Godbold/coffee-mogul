@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import SpinnerMini from "@/ui/spinner/spinner-mini";
 import paths from "@/paths";
 import ErrorToast from "@/ui/error-toast/error-toast";
+import { FaLock } from "react-icons/fa";
 
 interface PaymentFormProps {
   savedAddresses: Array<ContactOption>;
@@ -89,7 +90,14 @@ export default function PaymentForm({ savedAddresses }: PaymentFormProps) {
             disabled={!stripe || !elements || paymentState.isLoading}
             style={{ position: "relative", height: "5rem" }}
           >
-            {paymentState.isLoading ? <SpinnerMini /> : "Secure Checkout"}
+            {paymentState.isLoading ? (
+              <SpinnerMini />
+            ) : (
+              <>
+                <span>Secure Checkout</span>
+                <FaLock />
+              </>
+            )}
           </button>
         </form>
       ) : null}

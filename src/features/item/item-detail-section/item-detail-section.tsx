@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./item-detail-section.module.css";
+import componentStyles from "@/styles/component-styles.module.css";
 import { Document } from "mongodb";
 
 interface ItemDetailProps {
@@ -9,7 +10,7 @@ interface ItemDetailProps {
 export default function ItemDetailSection({ item }: ItemDetailProps) {
   return (
     <div className={styles.itemDetailsSection}>
-      <div className={styles.itemDetailsImage}>
+      <div className={`${styles.itemDetailsImage} ${componentStyles.edgeFade}`}>
         <Image src={item.image} alt={item.name} width={500} height={500} />
       </div>
       <div className={styles.itemInformationBlock}>{`£${

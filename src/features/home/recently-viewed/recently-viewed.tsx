@@ -3,6 +3,7 @@ import ErrorToast from "@/ui/error-toast/error-toast";
 import ProductSection from "@/ui/product-section/product-section";
 import { authClient, itemClient } from "@/utils/db";
 import { getServerSession } from "next-auth";
+import styles from "@/styles/component-styles.module.css";
 
 async function getRecentlyViewedItemIds(userId: string) {
   const client = await authClient;
@@ -48,6 +49,8 @@ async function getRecentlyViewedItems(itemIds: Array<string>) {
 export default async function RecentlyViewed() {
   const session = await getServerSession(authOptions);
 
+  if (!session?.user?.email) return null;
+
   let recentlyViewedItems;
   if (session?.user?.email) {
     const recentlyViewed = await getRecentlyViewedItemIds(session.user.email);
@@ -60,6 +63,9 @@ export default async function RecentlyViewed() {
       <ErrorToast
         errors={recentlyViewedItems?.error ? [recentlyViewedItems.error] : []}
       />
+      <h2 className={`${styles.subHeading} ${styles.heading}`}>
+        Recently Viewed
+      </h2>
       {recentlyViewedItems?.items ? (
         <ProductSection items={recentlyViewedItems.items} />
       ) : null}

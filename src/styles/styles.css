@@ -130,8 +130,8 @@ button:active {
 
 select:disabled,
 input:disabled {
-  background-color: var(--color-grey-200);
-  color: var(--color-grey-500);
+  background-color: var(--color-grey-600);
+  color: var(--color-grey-400);
 }
 
 input:focus,

@@ -1,10 +1,29 @@
 .hero {
   width: 100%;
-  height: 50rem;
+  height: 40rem;
 
-  background-color: var(--color-brand-200);
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: 1fr 3fr;
+  column-gap: 2.4rem;
 
+  margin: 5rem 2.4rem;
+}
+
+.heroImage {
+  grid-row: 1 / -1;
+}
+
+.heroTitle {
+  text-align: right;
+}
+
+.heroText {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.heroText > span {
+  text-align: right;
 }

@@ -21,6 +21,7 @@
 
 .closed {
   transform: scaleY(0%);
+  height: 0;
 }
 
 .reviewOpenButton {

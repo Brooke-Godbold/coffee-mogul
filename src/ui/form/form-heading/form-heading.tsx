@@ -7,7 +7,7 @@ interface FormHeadingProps {
 export default function FormHeading({ title }: FormHeadingProps) {
   return (
     <div className={styles.formSection}>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
     </div>
   );
 }

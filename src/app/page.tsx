@@ -14,9 +14,6 @@ export default function Home() {
         Welcome to Coffee Mogul
       </h1>
       <Hero />
-      <h2 className={`${styles.subHeading} ${styles.heading}`}>
-        Recently Viewed
-      </h2>
       <Suspense fallback={<ProductSectionSkeleton />}>
         <RecentlyViewed />
       </Suspense>
