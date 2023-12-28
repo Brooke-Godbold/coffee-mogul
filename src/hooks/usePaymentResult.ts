@@ -25,25 +25,24 @@ export function usePaymentResult() {
       switch (paymentIntent.paymentIntent?.status) {
         case "succeeded":
           toast("Success! Payment received.");
+          router.push(paths.checkoutCompletePath());
           break;
 
         case "processing":
           toast(
             `Payment processing. We'll update you when payment is received.`
           );
+          router.push(paths.checkoutCompletePath());
           break;
 
         case "requires_payment_method":
           toast(`Payment failed. Please try another payment method.`);
-          // Redirect your user back to your payment page to attempt collecting payment again
           break;
 
         default:
           toast("Something went wrong.");
           break;
       }
-
-      router.push(paths.ordersPath());
     }
 
     getPaymentSession();

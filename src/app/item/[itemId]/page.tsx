@@ -12,6 +12,10 @@ import SignInButton from "@/ui/sign-in-button/sign-in-button";
 import ReviewSection from "@/features/review/review-section/review-section";
 import ErrorToast from "@/ui/error-toast/error-toast";
 import { revalidatePath } from "next/cache";
+import AverageRating, {
+  AverageRatingSkeleton,
+} from "@/ui/average-rating/average-rating";
+import { Suspense } from "react";
 
 interface ItemResult {
   item?: Document | null;
@@ -162,6 +166,9 @@ export default async function ItemDetailPage({
       <h1 className={`${styles.mainHeading} ${styles.heading}`}>
         {itemDetail.item.name}
       </h1>
+      <Suspense fallback={<AverageRatingSkeleton />}>
+        <AverageRating itemId={itemId} />
+      </Suspense>
       <ItemDetailSection item={itemDetail.item} />
       {session?.user?.email ? (
         <AddRemoveItemSection

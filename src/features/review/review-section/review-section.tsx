@@ -2,29 +2,9 @@ import styles from "./review-section.module.css";
 import componentStyles from "@/styles/component-styles.module.css";
 import ReviewButton from "../review-button/review-button";
 import ReviewItem from "../review-item/review-item";
-import { itemClient } from "@/utils/db";
 import UsernameWidget from "@/ui/username-widget/username-widget";
 import ErrorToast from "@/ui/error-toast/error-toast";
-
-async function getReviews(itemId: string) {
-  const client = await itemClient;
-
-  try {
-    const reviewsList = await client
-      ?.db()
-      .collection("review")
-      .find({ itemId }, { projection: { _id: 0 }, sort: { _id: -1 } })
-      .toArray();
-
-    return { reviewsList };
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      return { error: error.message };
-    } else {
-      return { error: "Something went wrong" };
-    }
-  }
-}
+import { getReviews } from "@/utils/db/get-reviews";
 
 interface ReviewSectionProps {
   itemId: string;

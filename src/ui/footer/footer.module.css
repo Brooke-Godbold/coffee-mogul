@@ -57,6 +57,18 @@
   justify-content: flex-end;
 }
 
-.social > svg {
+.social > a {
+  transition: all 0.3s;
+}
+
+.social > a:hover {
+  transform: scale(110%);
+}
+
+.social > a:active {
+  transform: scale(120%);
+}
+
+.social > a > svg {
   transform: scale(250%) translateY(-25%);
 }

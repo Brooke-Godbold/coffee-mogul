@@ -1,0 +1,12 @@
+.averageRating {
+  display: flex;
+  gap: 1.2rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.averageRating > span {
+  font-style: italic;
+  font-weight: 600;
+}

@@ -1,12 +1,13 @@
 .itemDetailsSection {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 2fr 2fr 2fr;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: 1fr 1.5fr 1fr 1fr;
 
   background-color: var(--color-brand-700);
 
   border: 7px double var(--color-brand-500);
 
+  padding: 2.4rem;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
 }
@@ -16,6 +17,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .itemDetailsImage > img {
@@ -31,5 +33,47 @@
 }
 
 .itemInformationBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
   padding: 2.4rem;
+}
+
+.nutritionInformation {
+  font-size: 1.2rem;
+}
+
+.productInformation {
+  font-size: 1.2rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.sectionBorder {
+  border-bottom: 2px solid var(--color-brand-400);
+}
+
+.roastTag {
+  display: inline-block;
+
+  border-radius: var(--border-radius-md);
+  padding: 0.8rem 1.2rem;
+
+  margin-top: 3.6rem;
+
+  font-size: 1.2rem;
+
+  transition: all 0.3s;
+}
+
+.roastTag:hover {
+  transform: scale(110%);
+}
+
+.roastTag:active {
+  transform: scale(120%);
 }

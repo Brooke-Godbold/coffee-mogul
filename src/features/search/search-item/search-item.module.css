@@ -3,7 +3,7 @@
   height: auto;
 
   display: grid;
-  grid-template-rows: 6fr 2fr 1fr;
+  grid-template-rows: 6fr 1fr 1fr;
 
   transition: all 0.3s;
 }

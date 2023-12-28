@@ -16,7 +16,9 @@ export default function HeaderAuth() {
         <Spinner />
       ) : status === "authenticated" ? (
         <>
-          <button onClick={() => signOut()}>Sign Out</button>
+          <button type="button" onClick={() => signOut()}>
+            Sign Out
+          </button>
           <Link href={paths.ordersPath()}>Orders</Link>
           <Link href={paths.addressesPath()}>Addresses</Link>
         </>

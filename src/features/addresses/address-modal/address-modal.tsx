@@ -45,7 +45,10 @@ function AddressForm({ onCloseModal, existingAddress }: AddressFormProps) {
   useFormErrors(formState, onCloseModal, "Successfully Added Address!");
 
   return (
-    <ModalForm submitAction={addAddressAction} title="Add an Address">
+    <ModalForm
+      submitAction={addAddressAction}
+      title={existingAddress ? "Edit Address" : "Add an Address"}
+    >
       <FormInput
         label="Contact Name"
         name="name"

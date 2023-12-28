@@ -53,7 +53,10 @@ function ReviewForm({ onCloseModal, itemId, existingReview }: ReviewFormProps) {
   useFormErrors(formState, onCloseModal, "Successfully Added Review!");
 
   return (
-    <ModalForm submitAction={addReviewAction} title="Add a Review">
+    <ModalForm
+      submitAction={addReviewAction}
+      title={existingReview ? "Edit Review" : "Add a Review"}
+    >
       <div className={styles.formSection}>
         <label>Rating</label>
         <RatingBar rating={rating} setRating={setRating} />

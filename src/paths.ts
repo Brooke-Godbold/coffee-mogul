@@ -18,6 +18,10 @@ const paths = {
   addressesPath() {
     return "/profile/addresses";
   },
+
+  checkoutCompletePath() {
+    return "/cart/checkout/complete";
+  },
 };
 
 export default paths;

@@ -17,6 +17,16 @@
   gap: 1.2rem;
 
   align-items: center;
+
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  transform: scale(105%);
+}
+
+.logo:active {
+  transform: scale(110%);
 }
 
 .logo > svg {

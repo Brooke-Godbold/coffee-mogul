@@ -37,9 +37,15 @@ export default function Footer() {
           Copyright&copy; 2018-2023 CoffeeMogul. All rights reserved.
         </div>
         <div className={styles.social}>
-          <FaFacebook />
-          <FaInstagram />
-          <FaXTwitter />
+          <Link href="/">
+            <FaFacebook />
+          </Link>
+          <Link href="/">
+            <FaInstagram />
+          </Link>
+          <Link href="/">
+            <FaXTwitter />
+          </Link>
         </div>
       </div>
     </footer>
