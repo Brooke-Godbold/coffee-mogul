@@ -14,7 +14,7 @@ export default async function ReviewSection({ itemId }: ReviewSectionProps) {
   const reviews = await getReviews(itemId);
 
   return (
-    <div className={styles.reviewSection}>
+    <section className={styles.reviewSection}>
       <ErrorToast errors={reviews.error ? [reviews.error] : []} />
       <ReviewButton itemId={itemId} />
       <h2
@@ -22,7 +22,7 @@ export default async function ReviewSection({ itemId }: ReviewSectionProps) {
       >
         Reviews
       </h2>
-      <div className={styles.reviewsContainer}>
+      <ul className={styles.reviewsContainer}>
         {reviews.reviewsList?.length ?? 0 > 0 ? (
           reviews.reviewsList?.map((review) => (
             <ReviewItem key={review.title} review={review}>
@@ -32,7 +32,7 @@ export default async function ReviewSection({ itemId }: ReviewSectionProps) {
         ) : (
           <div>No reviews for this item currently</div>
         )}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }

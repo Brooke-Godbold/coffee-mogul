@@ -46,7 +46,7 @@ export default function ShoppingCartDropdownItem({
   );
 
   return (
-    <div className={styles.shoppingCartItem} key={item.data?.itemId}>
+    <li className={styles.shoppingCartItem} key={item.data?.itemId}>
       <Link
         className={styles.cartItemLink}
         href={paths.itemDetailPath(item.data?.itemId)}
@@ -62,6 +62,6 @@ export default function ShoppingCartDropdownItem({
           <FaMinus />
         </button>
       </div>
-    </div>
+    </li>
   );
 }

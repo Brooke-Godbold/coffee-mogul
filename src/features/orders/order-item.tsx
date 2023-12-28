@@ -14,7 +14,7 @@ export default function OrderItem({ order }: OrderItemProps) {
   const date = new Date(order.created * 1000);
 
   return (
-    <div className={styles.cardItem}>
+    <li className={styles.cardItem}>
       <div>{`Order Number: ${order.created}`}</div>
       {order.orderItems?.map((orderItem: OrderItem) => (
         <div
@@ -27,6 +27,6 @@ export default function OrderItem({ order }: OrderItemProps) {
         .replace(/\..+/, "")}`}</div>
       <div>{`Total Paid: £${parseInt(order.totalPrice) / 100}`}</div>
       <div>Status: Paid</div>
-    </div>
+    </li>
   );
 }

@@ -43,7 +43,7 @@ export default async function SearchResults({
   const search = await getSearchResults(searchTerm);
 
   return (
-    <div className={styles.searchResults}>
+    <ul className={styles.searchResults}>
       <ErrorToast errors={search.error ? [search.error] : []} />
       {(search.searchResults?.length ?? 0) > 0 ? (
         search.searchResults?.map((result) => (
@@ -55,6 +55,6 @@ export default async function SearchResults({
           <h3>Try adjusting your search</h3>
         </div>
       )}
-    </div>
+    </ul>
   );
 }

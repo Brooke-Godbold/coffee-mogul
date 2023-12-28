@@ -21,14 +21,14 @@ export default function ReviewItem({ review, children }: ReviewItemProps) {
   }
 
   return (
-    <div className={styles.reviewItem}>
+    <li className={styles.reviewItem}>
       <button onClick={handleOpenReview} className={styles.reviewOpenButton}>
         {isOpen ? <FaChevronUp /> : <FaChevronDown />}
       </button>
       <h3>{review.title}</h3>
       <RatingBar rating={review.rating} />
       {children}
-      <div
+      <article
         className={
           isOpen
             ? `${styles.reviewContent}`
@@ -36,7 +36,7 @@ export default function ReviewItem({ review, children }: ReviewItemProps) {
         }
       >
         {review.content}
-      </div>
-    </div>
+      </article>
+    </li>
   );
 }

@@ -5,13 +5,13 @@ import CardListSkeleton from "@/ui/skeleton/card-list-skeleton/card-list-skeleto
 
 export default function OrdersPage() {
   return (
-    <div className={styles.page}>
+    <section className={styles.page}>
       <h1 className={`${styles.mainHeading} ${styles.heading}`}>
         Order History
       </h1>
       <Suspense fallback={<CardListSkeleton />}>
         <OrdersSection />
       </Suspense>
-    </div>
+    </section>
   );
 }

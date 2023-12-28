@@ -37,9 +37,11 @@ export default function ShoppingCartButton({
       >
         <h3>Shopping Cart</h3>
         {(cartItems?.cart?.length ?? 0) > 0 ? (
-          cartItems?.cart?.map((item) => (
-            <ShoppingCartDropdownItem key={item.data?.itemId} item={item} />
-          ))
+          <ul>
+            {cartItems?.cart?.map((item) => (
+              <ShoppingCartDropdownItem key={item.data?.itemId} item={item} />
+            ))}
+          </ul>
         ) : (
           <div>Your Cart is Empty!</div>
         )}

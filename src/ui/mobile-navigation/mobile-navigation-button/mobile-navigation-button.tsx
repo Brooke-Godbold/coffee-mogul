@@ -11,7 +11,7 @@ export default function MobileNavigationButton() {
   const [menuActive, setMenuActive] = useState(false);
 
   return (
-    <div className={styles.mobileNavigation}>
+    <nav className={styles.mobileNavigation}>
       <Suspense fallback={<SearchBarSkeleton />}>
         <SearchBar />
       </Suspense>
@@ -19,6 +19,6 @@ export default function MobileNavigationButton() {
         <GrMenu />
       </button>
       {menuActive && <MobileNavigationMenu setMenuActive={setMenuActive} />}
-    </div>
+    </nav>
   );
 }

@@ -4,17 +4,17 @@ import componentStyles from "@/styles/component-styles.module.css";
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
-      <div className={`${styles.heroImage} ${componentStyles.edgeFade}`}>
+    <section className={styles.hero}>
+      <figure className={`${styles.heroImage} ${componentStyles.edgeFade}`}>
         <Image
           src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=3737&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Making Coffee"
           height={400}
           width={700}
         />
-      </div>
+      </figure>
       <h2 className={styles.heroTitle}>Coffee Mogul</h2>
-      <div className={styles.heroText}>
+      <article className={styles.heroText}>
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
           accusamus quasi, aut, optio assumenda necessitatibus harum blanditiis
@@ -33,7 +33,7 @@ export default function Hero() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
           accusamus quasi, aut, optio assumenda necessitatibus harum.
         </span>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }

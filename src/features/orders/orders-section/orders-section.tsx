@@ -40,11 +40,11 @@ export default async function OrdersSection() {
   const orders = await getHistoricalTransactions(session.user.email);
 
   return (
-    <div className={styles.cardSection}>
+    <ul className={styles.cardSection}>
       <ErrorToast errors={orders.error ? [orders.error] : []} />
       {orders.transactions?.map((order, i) => (
         <OrderItem key={`order_${i}`} order={order} />
       ))}
-    </div>
+    </ul>
   );
 }

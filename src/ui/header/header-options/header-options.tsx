@@ -8,10 +8,10 @@ export default async function HeaderOptions() {
   const cartItems = await getCart("pending");
 
   return (
-    <div className={styles.options}>
+    <nav className={styles.options}>
       <ErrorToast errors={cartItems.error ? [cartItems.error] : []} />
       <HeaderAuth />
       <ShoppingCartButton cart={cartItems} />
-    </div>
+    </nav>
   );
 }

@@ -24,8 +24,10 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
   }
 
   return (
-    <div className={styles.itemDetailsSection}>
-      <div className={`${styles.itemDetailsImage} ${componentStyles.edgeFade}`}>
+    <section className={styles.itemDetailsSection}>
+      <figure
+        className={`${styles.itemDetailsImage} ${componentStyles.edgeFade}`}
+      >
         <Image
           src={item.image}
           alt={item.name}
@@ -33,14 +35,14 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
           height={500}
           layout="responsive"
         />
-      </div>
+      </figure>
       <div
         className={`${styles.itemInformationBlock} ${styles.price} ${styles.sectionBorder}`}
       >
         <h3>Price</h3>
         <p>{`£${item.price / 100}`}</p>
       </div>
-      <div
+      <article
         className={`${styles.itemInformationBlock} ${styles.about} ${styles.sectionBorder}`}
       >
         <h3>{`About ${item.name}`}</h3>
@@ -55,8 +57,8 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
             )} Roast`}
           </span>
         </div>
-      </div>
-      <div
+      </article>
+      <aside
         className={`${styles.itemInformationBlock} ${styles.nutritionInformation} ${styles.sectionBorder}`}
       >
         <h3>Nutrition</h3>
@@ -65,8 +67,8 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
             <li key={`nutition_${i}`}>{nutrition}</li>
           ))}
         </ul>
-      </div>
-      <div
+      </aside>
+      <aside
         className={`${styles.itemInformationBlock} ${styles.productInformation}`}
       >
         <h3>Product Information</h3>
@@ -75,7 +77,7 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
             <li key={`product_${i}`}>{product}</li>
           ))}
         </ul>
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 }

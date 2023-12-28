@@ -41,11 +41,11 @@ export default async function AddressSection() {
   const addressData = await getAddresses(session?.user?.email);
 
   return (
-    <div className={styles.cardSection}>
+    <ul className={styles.cardSection}>
       <ErrorToast errors={addressData.error ? [addressData.error] : []} />
       {addressData.addresses?.map((address: Document, i: number) => (
         <AddressItem key={`address_${i}`} address={address} />
       ))}
-    </div>
+    </ul>
   );
 }

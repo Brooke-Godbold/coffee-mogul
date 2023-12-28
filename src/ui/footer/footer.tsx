@@ -8,45 +8,73 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLinksGrid}>
-        <div className={styles.footerLinkSection}>
+        <nav className={styles.footerLinkSection}>
           <h4>Company</h4>
-          <div className={styles.footerLinks}>
-            <Link href="/">Careers</Link>
-            <Link href="/">Abous Us</Link>
-            <Link href="/">Contact</Link>
-          </div>
-        </div>
-        <div className={styles.footerLinkSection}>
+          <ul className={styles.footerLinks}>
+            <li>
+              <Link href="/">Careers</Link>
+            </li>
+            <li>
+              <Link href="/">Abous Us</Link>
+            </li>
+            <li>
+              <Link href="/">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <nav className={styles.footerLinkSection}>
           <h4>Support</h4>
-          <div className={styles.footerLinks}>
-            <Link href="/">Payments</Link>
-            <Link href="/">Deliveries & Orders</Link>
-            <Link href="/">Profile</Link>
-            <Link href="/">FAQs</Link>
-          </div>
-        </div>
+          <ul className={styles.footerLinks}>
+            <li>
+              <Link href="/">Payments</Link>
+            </li>
+            <li>
+              <Link href="/">Deliveries & Orders</Link>
+            </li>
+            <li>
+              <Link href="/">Profile</Link>
+            </li>
+            <li>
+              <Link href="/">FAQs</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div className={styles.footerBottomGrid}>
-        <div className={styles.legal}>
-          <Link href="/">Terms & Conditions</Link>
-          <Link href="/">Privacy</Link>
-          <Link href="/">Cookies</Link>
-          <Link href="/">Legal</Link>
-        </div>
+        <ul className={styles.legal}>
+          <li>
+            <Link href="/">Terms & Conditions</Link>
+          </li>
+          <li>
+            <Link href="/">Privacy</Link>
+          </li>
+          <li>
+            <Link href="/">Cookies</Link>
+          </li>
+          <li>
+            <Link href="/">Legal</Link>
+          </li>
+        </ul>
         <div className={styles.copyright}>
           Copyright&copy; 2018-2023 CoffeeMogul. All rights reserved.
         </div>
-        <div className={styles.social}>
-          <Link href="/">
-            <FaFacebook />
-          </Link>
-          <Link href="/">
-            <FaInstagram />
-          </Link>
-          <Link href="/">
-            <FaXTwitter />
-          </Link>
-        </div>
+        <ul className={styles.social}>
+          <li>
+            <Link href="/">
+              <FaFacebook />
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <FaInstagram />
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <FaXTwitter />
+            </Link>
+          </li>
+        </ul>
       </div>
     </footer>
   );

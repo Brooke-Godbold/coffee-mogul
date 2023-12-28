@@ -8,10 +8,10 @@ interface ProductSectionProps {
 
 export default function ProductSection({ items }: ProductSectionProps) {
   return (
-    <div className={styles.productSection}>
+    <ul className={styles.productSection}>
       {items.map((item) => (
         <SearchItem key={item.itemId} item={item} />
       ))}
-    </div>
+    </ul>
   );
 }
