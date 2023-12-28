@@ -47,11 +47,15 @@ export default function PaymentForm({ savedAddresses }: PaymentFormProps) {
   useEffect(() => {
     async function payment() {
       if (paymentState.isLoading && elements) {
+        const returnBasePath = `${window.location.protocol}//${
+          window.location.hostname
+        }${window.location.port ? ":" : ""}${window.location.port}`;
+
         // @ts-ignore
         const { error } = await stripe?.confirmPayment({
           elements,
           confirmParams: {
-            return_url: `http://localhost:3000${paths.checkoutPath()}`,
+            return_url: `${returnBasePath}${paths.checkoutPath()}`,
           },
         });
 
