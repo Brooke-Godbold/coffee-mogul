@@ -181,8 +181,11 @@
 }
 
 .link {
-  font-weight: 600;
+  font-weight: bold;
+  font-style: italic;
   transition: all 0.3s;
+
+  transform-origin: left;
 
   display: block;
 }

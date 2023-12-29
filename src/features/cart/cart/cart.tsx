@@ -3,15 +3,15 @@ import CheckoutButton from "@/ui/checkout-button/checkout-button";
 import ErrorToast from "@/ui/error-toast/error-toast";
 import Spinner from "@/ui/spinner/spinner";
 import { getCart } from "@/utils/db/get-shopping-cart";
+import { totalPrice } from "@/utils/price";
 
 export default async function Cart() {
   const cartItems = await getCart("pending");
-  const totalPrice = cartItems.cart?.reduce(
-    (arr, cur) => arr + cur.quantity * cur.data?.price,
-    0
-  );
 
-  if (!cartItems || ((cartItems.cart?.length ?? 0) > 0 && !totalPrice)) {
+  if (
+    !cartItems ||
+    ((cartItems.cart?.length ?? 0) > 0 && !totalPrice(cartItems.cart || []))
+  ) {
     return <Spinner />;
   }
 
@@ -22,7 +22,7 @@ export default async function Cart() {
         <>
           <CartSection
             cartItems={cartItems.cart}
-            totalPrice={totalPrice || 0}
+            totalPrice={totalPrice(cartItems.cart || []) || 0}
           />
           <CheckoutButton />
         </>

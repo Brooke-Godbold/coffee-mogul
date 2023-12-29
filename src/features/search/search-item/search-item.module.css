@@ -36,17 +36,41 @@
   text-align: center;
 }
 
+.priceSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
 .searchItemPrice {
   text-align: center;
 }
 
+.saleStrike {
+  text-decoration: line-through;
+}
+
+.salePrice {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--color-red-600);
+}
+
 @media (max-width: 40em) {
   .searchItem {
-    grid-template-rows: 3fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
   }
 
   .searchItemTitle {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 30em) {
+  .priceSection {
+    flex-direction: column;
   }
 }
 

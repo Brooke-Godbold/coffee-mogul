@@ -20,7 +20,19 @@
   justify-self: flex-end;
 }
 
-.itemLink {
-  font-style: italic;
+.saleStrike {
+  text-decoration: line-through;
+}
+
+.priceSection {
+  display: flex;
+  gap: 1.2rem;
+
+  align-items: center;
+}
+
+.salePrice {
   font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--color-red-400);
 }

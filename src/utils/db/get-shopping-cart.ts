@@ -2,12 +2,10 @@ import type { Document } from "mongodb";
 import { itemClient, userClient } from "../db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
+import { cartItem } from "@/features/checkout/checkout-section/checkout-section";
 
 export interface Cart {
-  cart?: {
-    quantity: number;
-    data: Document | undefined;
-  }[];
+  cart?: cartItem[];
   error?: string;
 }
 

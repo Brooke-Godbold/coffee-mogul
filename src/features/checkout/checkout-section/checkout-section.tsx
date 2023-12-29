@@ -11,6 +11,8 @@ import CartSection from "@/features/cart/cart-section";
 import { useSession } from "next-auth/react";
 import PaymentForm from "@/features/payment/payment-form/payment-form";
 
+import { totalPrice as getTotalPrice } from "@/utils/price";
+
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
 );
@@ -60,10 +62,7 @@ export default function CheckoutSection({
   useEffect(() => {
     if (!cartItems) return;
 
-    const totalPrice = cartItems?.reduce(
-      (arr, cur) => arr + cur.quantity * cur.data?.price,
-      0
-    );
+    const totalPrice = getTotalPrice(cartItems);
     setTotalPrice(totalPrice);
   }, [cartItems]);
 

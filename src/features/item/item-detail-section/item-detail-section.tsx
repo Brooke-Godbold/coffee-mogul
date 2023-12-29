@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./item-detail-section.module.css";
 import componentStyles from "@/styles/component-styles.module.css";
 import { Document } from "mongodb";
+import Sale from "@/ui/sale/sale";
 
 interface ItemDetailProps {
   item: Document;
@@ -37,10 +38,19 @@ export default function ItemDetailSection({ item }: ItemDetailProps) {
         />
       </figure>
       <div
-        className={`${styles.itemInformationBlock} ${styles.price} ${styles.sectionBorder}`}
+        className={`${styles.itemInformationBlock} ${styles.priceSection} ${styles.sectionBorder}`}
       >
-        <h3>Price</h3>
-        <p>{`£${item.price / 100}`}</p>
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "2.4rem" }}
+        >
+          <h3>Price</h3>
+          <p
+            className={
+              item.sale ? `${styles.price} ${styles.priceSale}` : styles.price
+            }
+          >{`£${item.price / 100}`}</p>
+        </div>
+        {item.sale && <Sale saleValue={50} price={item.price} />}
       </div>
       <article
         className={`${styles.itemInformationBlock} ${styles.about} ${styles.sectionBorder}`}

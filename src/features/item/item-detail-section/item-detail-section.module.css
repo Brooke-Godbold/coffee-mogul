@@ -49,9 +49,19 @@
   font-size: 1.2rem;
 }
 
+.priceSection {
+  display: flex;
+  flex-direction: row;
+  gap: 3.6rem;
+}
+
 .price {
   font-size: 1.8rem;
   font-weight: 700;
+}
+
+.priceSale {
+  text-decoration: line-through;
 }
 
 .sectionBorder {

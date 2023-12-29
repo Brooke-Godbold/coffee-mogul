@@ -1,0 +1,33 @@
+.sale {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.saleTag {
+  display: flex;
+  gap: 1.2rem;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-red-600);
+  border-radius: var(--border-radius-sm);
+
+  padding: 0.5rem 1.4rem;
+
+  transition: all 0.3s;
+}
+
+.saleTag:hover {
+  transform: scale(110%);
+}
+
+.saleTagLabel {
+  font-weight: 600;
+}
+
+.salePrice {
+  font-size: 2.4rem;
+  color: var(--color-red-400);
+}
