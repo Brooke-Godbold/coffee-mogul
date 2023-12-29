@@ -9,6 +9,22 @@
   border-bottom: 2px solid var(--color-brand-500);
 }
 
+.itemInfoSection {
+  display: flex;
+  gap: 1.2rem;
+
+  align-items: center;
+}
+
+.itemImage {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+  border: 2px solid var(--color-gold-500);
+}
+
 .quantityButtons {
   display: flex;
   gap: 0.5rem;

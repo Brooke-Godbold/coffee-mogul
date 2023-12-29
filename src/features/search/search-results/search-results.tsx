@@ -26,8 +26,6 @@ async function getSearchResults(term: string, roast: string, sortType: string) {
     }
   }
 
-  console.log(sortQuery);
-
   try {
     let searchResults;
 

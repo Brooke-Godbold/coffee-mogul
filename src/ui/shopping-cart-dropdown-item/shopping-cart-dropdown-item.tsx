@@ -9,6 +9,7 @@ import Link from "next/link";
 import paths from "@/paths";
 import { useAddToCart, useRemoveFromCart } from "@/hooks/useAddRemoveItemToast";
 import useFormErrors from "@/hooks/useFormErrors";
+import Image from "next/image";
 
 interface ShoppingCartDropdownItemProps {
   item: {
@@ -46,14 +47,25 @@ export default function ShoppingCartDropdownItem({
     `Removed ${item?.data?.name} from Cart!`
   );
 
+  //console.log(item.data.image);
+
   return (
     <li className={styles.shoppingCartItem} key={item.data?.itemId}>
-      <Link
-        className={componentStyles.link}
-        href={paths.itemDetailPath(item.data?.itemId)}
-      >
-        {item.data?.name}
-      </Link>
+      <div className={styles.itemInfoSection}>
+        <Image
+          className={styles.itemImage}
+          src={item.data?.image}
+          alt={`${item.data?.name}`}
+          height={25}
+          width={25}
+        />
+        <Link
+          className={componentStyles.link}
+          href={paths.itemDetailPath(item.data?.itemId)}
+        >
+          {item.data?.name}
+        </Link>
+      </div>
       <div>{`x${item.quantity}`}</div>
       <div className={styles.quantityButtons}>
         <button className={styles.quantityButton} formAction={addToCart}>
