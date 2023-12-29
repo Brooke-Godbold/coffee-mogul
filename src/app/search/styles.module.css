@@ -1,0 +1,11 @@
+.searchPage {
+  display: flex;
+  gap: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .searchPage {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+}

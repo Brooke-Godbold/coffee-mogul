@@ -22,7 +22,11 @@ function SearchBarInput() {
   return (
     <>
       <input
-        defaultValue={searchParams.get("term") || ""}
+        defaultValue={
+          (searchParams.get("term")?.length ?? 0) > 2
+            ? searchParams.get("term") || ""
+            : ""
+        }
         name="term"
         className={styles.searchBar}
         disabled={pending}

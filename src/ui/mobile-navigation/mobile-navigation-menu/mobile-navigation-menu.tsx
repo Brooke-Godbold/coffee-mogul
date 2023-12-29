@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./mobile-navigation-menu.module.css";
 import HeaderAuth from "@/ui/header-auth/header-auth";
+import HeaderProducts from "@/ui/header/header-products/header-products";
 
 interface MobileNavigationMenuProps {
   setMenuActive: Function;
@@ -27,6 +28,7 @@ export default function MobileNavigationMenu({
             Home
           </Link>
         </li>
+        <HeaderProducts onClickFunc={setMenuActive} />
         <HeaderAuth onClickFunc={setMenuActive} />
       </ul>
     </>

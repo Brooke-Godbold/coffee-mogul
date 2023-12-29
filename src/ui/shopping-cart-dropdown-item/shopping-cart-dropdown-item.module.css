@@ -5,7 +5,7 @@
 
   align-items: center;
 
-  padding-bottom: 1.2rem;
+  padding: 1.2rem 0;
   border-bottom: 2px solid var(--color-brand-500);
 }
 
@@ -38,17 +38,4 @@
 
 .quantityButton:focus {
   outline: none;
-}
-
-.cartItemLink {
-  transition: all 0.3s;
-}
-
-.cartItemLink:hover {
-  color: var(--color-gold-100);
-  transform: scale(105%);
-}
-
-.cartItemLink:active {
-  transform: scale(115%);
 }

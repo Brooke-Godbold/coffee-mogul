@@ -22,6 +22,10 @@ const paths = {
   checkoutCompletePath() {
     return "/cart/checkout/complete";
   },
+
+  productsPath() {
+    return "/search";
+  },
 };
 
 export default paths;

@@ -1,0 +1,13 @@
+.productsSection > ul {
+  display: flex;
+  gap: 1.2rem;
+
+  align-items: center;
+}
+
+@media (max-width: 60em) {
+  .productsSection > ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

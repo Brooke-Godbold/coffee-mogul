@@ -2,6 +2,7 @@
 
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import styles from "./shopping-cart-dropdown-item.module.css";
+import componentStyles from "@/styles/component-styles.module.css";
 import { Document } from "mongodb";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -48,7 +49,7 @@ export default function ShoppingCartDropdownItem({
   return (
     <li className={styles.shoppingCartItem} key={item.data?.itemId}>
       <Link
-        className={styles.cartItemLink}
+        className={componentStyles.link}
         href={paths.itemDetailPath(item.data?.itemId)}
       >
         {item.data?.name}

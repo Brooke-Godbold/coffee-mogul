@@ -3,25 +3,63 @@ import styles from "./search-results.module.css";
 import SearchItem from "../search-item/search-item";
 import ErrorToast from "@/ui/error-toast/error-toast";
 
-async function getSearchResults(term: string) {
+async function getSearchResults(term: string, roast: string, sortType: string) {
   const client = await itemClient;
 
+  const filter = { ...(roast && { roast }) };
+
+  let sortQuery;
+
+  if (!sortType) {
+    sortQuery = { name: 1 };
+  } else {
+    switch (sortType) {
+      case "newest":
+        sortQuery = { _id: -1 };
+        break;
+      case "oldest":
+        sortQuery = { _id: 1 };
+        break;
+      default:
+        sortQuery = { [sortType]: 1 };
+        break;
+    }
+  }
+
+  console.log(sortQuery);
+
   try {
-    const searchResults = await client
-      ?.db()
-      .collection("coffee")
-      .aggregate([
-        {
-          $search: {
-            index: "item_search",
-            autocomplete: {
-              query: term,
-              path: "name",
+    let searchResults;
+
+    if (!term || term.length < 3) {
+      searchResults = await client
+        ?.db()
+        .collection("coffee")
+        .find(filter, { sort: sortQuery as any })
+        .toArray();
+    } else {
+      searchResults = await client
+        ?.db()
+        .collection("coffee")
+        .aggregate([
+          {
+            $search: {
+              index: "item_search",
+              autocomplete: {
+                query: term,
+                path: "name",
+              },
             },
           },
-        },
-      ])
-      .toArray();
+          {
+            $match: filter,
+          },
+          {
+            $sort: sortQuery as any,
+          },
+        ])
+        .toArray();
+    }
 
     return { searchResults };
   } catch (error: unknown) {
@@ -35,12 +73,16 @@ async function getSearchResults(term: string) {
 
 interface SearchResultsProps {
   searchTerm: string;
+  roast: string;
+  sort: string;
 }
 
 export default async function SearchResults({
   searchTerm,
+  roast,
+  sort,
 }: SearchResultsProps) {
-  const search = await getSearchResults(searchTerm);
+  const search = await getSearchResults(searchTerm, roast, sort);
 
   return (
     <ul className={styles.searchResults}>
